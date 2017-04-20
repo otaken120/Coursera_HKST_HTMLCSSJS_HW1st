@@ -3,30 +3,38 @@
 <header>
   <title></title>
   <meta name="author" content="Ken Deng">
-
+  <style>
+  .fieldset{border:10px solid yellow;background:lightyellow; margin-bottom:10px;width:720px;}
+  .fieldset label {width:180px;display:inline-block;text-align: right;vertical-align: top}
+  .fieldset textarea {width:360px;height: 50px}
+  label:hover{font-size: 40px}
+  input:hover{font-size: 40px}
+  #autolabel{width: auto;}
+  #centerrangeleft{text-align:center;display:inline;background: red;color:white}
+  #centerrangeright{text-align:center;display:inline;background: purple;color:white}
+  </style>
 </header>
 <body>
   <h1>Please Enter Your Details For Our Dating Website!</h1>
   <form action="http://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php">
-    <fieldset>
+    <fieldset class="fieldset">
       <legend>Your Face</legend>
       <label for="avatar">Your Image:</label>
       <input type="file" id="avatar" name="avatar" required>
       <br>
       <label for="preview">Image Preview: </label><br>
       <img id="preview" width="50"/>
-      <script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js">
-
-      </script>
-
+      <script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
     </fieldset>
-    <fieldset>
+    <fieldset class="fieldset">
       <legend>Your General Details</legend>
-      <label for="name">Name: </label>
-      <input type="text" name="name" required> <br>
-      <label for "gender">Gender:</label>
-      <input type="radio" name="gender" >Male
-      <input type="radio" name="gender" > Female <br>
+      <label for="name">Name:</label>
+      <input type="text" name="name" placeholder="Your Full Name"required> <br>
+      <label  for "gender">Gender:</label>
+      <input type="radio" name="gender"/>
+      <label id=autolabel for="male">Male</label>
+      <input type="radio" name="gender" />
+      <label id=autolabel for="female">Female </label><br>
       <label for="age">Age:</label>
       <input type="number" min="0" max="99" step="1" value="18" required>  <br>
       <label for="birthday">Date of birth:</label>
@@ -43,14 +51,17 @@
         <option value="Canada">Canada</option>
       </select><br>
     </fieldset>
-    <fieldset>
+    <fieldset class="fieldset">
       <legend>Your Indicators</legend>
-      <label for="height">Height:</label><br>
-      Short<input type="range" min="0" max="100" step="5" value="50" name="height">Tall<br>
-      <label for="salary">Salary:</label><br>
-      Poor<input type="range" min="0" max="100" step="5" value="50" name="salry">Rich<br>
+      <label for="height">Height:</label>
+      <label id=centerrangeleft for="short">Short</label><input type="range" min="0" max="100" step="5" value="50" name="height">
+      <label id=centerrangeright for="tall">Tall</label><br>
+      <label for="salary">Salary:</label>
+      <label id=centerrangeleft for="poor"> Poor</label>
+      <input type="range" min="0" max="100" step="5" value="50" name="salry">
+      <label id=centerrangeright for="rich">Rich</label></tr><br>
     </fieldset>
-    <fieldset>
+    <fieldset class="fieldset">
       <legend>Your Contact Information</legend>
       <label for="email">Email:</label>
       <input type="email" name="email" required><br>
@@ -59,9 +70,12 @@
       <label for="address">Address:</label>
       <textarea rows="3" cols="20"></textarea><br>
       <label for="contact">Method to contact you:</label>
-      <input type="checkbox" name="contact" value="email">Email
-      <input type="checkbox" name="contact" value="Whatsapp">Whatsapp
-      <input type="checkbox" name="contact" value="In_app_chat">In-app Chat
+      <input type="checkbox" name="contact" value="email">
+      <label id=autolabel for="email">Email</label>
+      <input type="checkbox" name="contact" value="Whatsapp">
+      <label id=autolabel for="whatsapp">Whatsapp</label>
+      <input type="checkbox" name="contact" value="In_app_chat">
+      <label id=autolabel for="InAppChat" >In-app Chat</label>
 
     </fieldset>
   <input type="submit" value="Submit!">
